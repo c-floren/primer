@@ -17,16 +17,16 @@ def main():
     print("A secret message will be revealed " +
           "if you guess my secret number!")
     print("You have 5 tries.")
-    secret_number = randint(1, 3)
+    secret_number = randint(1, 10)
     turns = 0
     win = False
     while turns < 5:
-        guess = input(f"Guess a number from 1-3 (Try {turns + 1}/5): ")
+        guess = input(f"Guess a number from 1-10 (Try {turns + 1}/5): ")
 
         try:
             guess_int = int(guess)
-            if guess_int < 1 or guess_int > 3:
-                print("Error: Please enter a number between 1 and 3.")
+            if guess_int < 1 or guess_int > 10:
+                print("Error: Please enter a number between 1 and 10.")
                 continue
             win = guess_int == secret_number
         except ValueError:
